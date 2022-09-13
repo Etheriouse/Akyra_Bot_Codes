@@ -9,9 +9,8 @@ const Utilitaire = require("./FonctionAky/Utilitaire.js")
 client.login(token);
 
 client.once('ready', () => {
-    console.log("Connected");
-    client.user.setActivity("ZZCCMXTP - LEZGONGUE", { type: "LISTENING"});
-    client.user.setStatus("online");
+    console.log("Connected")
+    client.user.setActivity('ZZCCMXTP - LEZGONGUE', { type: 'LISTENING' }).then(presence => console.log(`Activity set to ${presence.activities[0].name}`)).catch(console.error);
 });
 
 client.on("message", message => {
