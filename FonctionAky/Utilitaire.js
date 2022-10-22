@@ -1,6 +1,67 @@
     // Fonction, commande utilitaire //
 
-module.exports = { 
+module.exports = {
+
+    Eq2ndCommande:
+    
+    function Eq2nd() {
+        
+    },
+
+    PrefixactuelCommande:
+
+    function prefixactuel(message, prefix) {
+        message.channel.send(`Le prefix actuel du bot est: ${prefix}`)
+    },
+
+    PrefixChangeCommande:
+
+    function PrefixChange(message, prefix) {
+        if (message.member.hasPermission('MANAGE_MESSAGES')) {
+            const prefixchangeString = message.toString().slice(14)
+            if (prefixchangeString) {
+                console.log(prefixchangeString)
+                const prefixchangeStringLenght = prefixchangeString.length
+                if (prefixchangeStringLenght <= 1 && prefixchangeStringLenght >= 1) {
+                    console.log(prefix, " Avant commande")
+                    var prefix = prefixchangeString.toString()
+                    console.log(prefix, " Après commande")
+                    message.channel.send(`Voici votre nouveau prefix: ${prefix}`)
+                }
+                else {
+                    message.channel.send("Veuillez donner un préfix de 1")
+                }
+            }
+            else {
+                message.channel.send("Veuillez donner un nouveau prefix")
+            }
+        }
+        else {
+            message.channel.send("La plèbe doit posséder la permission de gerer les messages")
+        }
+    },
+
+    /**function PrefixChange(message, prefix) {
+        if(!(message.member.hasPermission('MANAGE_MESSAGES'))) {
+            message.channel.send("La plèbe doit posséder la permission de gérer les messages");
+            return;
+        }   
+        const prefixchangeString = message.toString().slice(14)
+        if(!(prefixchangeString)) {
+            message.channel.send("Veuillez donner un nouveau préfix");
+            return;
+        }
+        const prefixchangeStringLenght = prefixchangeString.length
+        if (!(prefixchangeStringLenght <= 1 && prefixchangeStringLenght >= 1)) {
+            message.channel.send("Veuillez donner un préfix de 1");
+            return;
+        }
+        console.log(prefix, " Avant commande")
+        prefix = prefixchangeString.toString()
+        console.log(prefix, " Après commande")
+        message.channel.send(`Voici votre nouveau prefix: ${prefix}`)
+        
+    },*/
     
     avatarCommande: 
 
@@ -21,7 +82,7 @@ module.exports = {
         .setTitle('Help / Commandes')
         .setColor(0xb300ff) // On crée un embed avec une couleur défini ( violet ) 
         .setAuthor({ name: 'Some name', url: 'https://discord.js.org' }) 
-        .setDescription("---- Commandes modération: ----\n- Bannir ( ban ) \n- Expulser ( kick )\n- Mute ( mute ) \n- Supprimer des messages ( delete )\n---- Commandes fun: ----\n- Réponse aléatoire ( 8ball ) \n- Russe ( russe ) \n- Roulette ( roulette ) \n- Shifumi ( sfm )\n- Gif random ( gr )\n- Destituer l'auteur ( destituer @Etheriouse#1617 ) \n---- Utilitaire: ----\n- Avatar ( a )\n- Information sur une personne ( inf )\n - Commandes ( help )")
+        .setDescription("---- Commandes modération: ----\n- Shut down le bot ( kill ) \n- Bannir ( ban ) \n- Expulser ( kick )\n- Mute ( mute ) \n- Supprimer des messages ( delete )\n---- Commandes fun: ----\n- Pile ou face ( pof ) \n- Réponse aléatoire ( 8ball ) \n- Réponse aléatoire sympa ( 8b ) \n- Russe ( russe ) \n- Roulette ( roulette ) \n- Shifumi ( sfm )\n- Gif random ( gr )\n- Destituer l'auteur ( destituer @Etheriouse#1617 )\n- Forçage ( histoire )\n- GigachadTitude ( gigachadtitude ) \n---- Utilitaire: ----\n- Changer le prefix ( changeprefix ) \n- Prefix actuel ( prefixactuel ( sans besoin de prefix )) \n- Avatar ( a )\n- Information sur une personne ( inf )\n - Commandes ( help )")
         // La description contient toute les information des commande pour le !help
         .addFields(
             { name: "Commande en cours de dévellopement", value: "!mute, !gr, !inf"},
