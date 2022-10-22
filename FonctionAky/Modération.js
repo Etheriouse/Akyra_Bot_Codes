@@ -1,6 +1,27 @@
 // Fonction, commande modération //
 
+const { RoleManager } = require("discord.js")
+
 module.exports = {
+
+    killCommande: 
+
+    function kilé(message) {
+        if (message.member.hasPermission("ADMINISTRATOR")) {
+            message.channel.send(`Que la plèbe se taise, la haute société souhaite s'endormir`)
+                if (message.author.id == "497120447909986305") {    
+                    setTimeout(function(){
+                        process.exit()
+                    }, 100) 
+                }
+                else {
+                    message.channel.send("Alors oui mais non car tu n'est pas le Dieu suprème <@497120447909986305>.")
+                }
+        } 
+        else {
+            message.channel.send(`Comment ose tu !! Tu n'es qu'un dechet de la plèbe !`)
+        }
+    },
 
     banCommande: 
 
@@ -22,7 +43,7 @@ module.exports = {
     
         }
         else {
-            message.channel.send("Vous devez avoir la permission d'administrateur pour éxécuter cette commande :(")
+            message.channel.send("La plèbe ne doit pas toucher au jouet de la haute société")
         }
     
     },
@@ -53,16 +74,7 @@ module.exports = {
     muteCommande:
 
     function mute(message){
-        if(message.member.hasPermission('MANAGE_ROLES')){
-            const usermuted = message.mentions.users.first();
-            let rolemuted = message.guild.roles.cache.find(role => role.name === "Muted");
-            console.log(rolemuted)
-            console.log(usermuted)
-            //usermuted.roles.add(rolemuted);
-        }
-        else{
-            message.channel.send(`Vous devez avoir la permission de gérer les roles pour éxécuter cette commande`)
-        }
+        
     
     }, // a modifier car ne fonctionne pas
 
