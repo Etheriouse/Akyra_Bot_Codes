@@ -1,10 +1,92 @@
 // Fonction, commande divertissante //
-
-const { Message } = require("discord.js");
-
  
 module.exports = {
+
+    gigachadtitudeCommande:
+
+    function gigachadtitude(message) {
+        var autor = message.mentions.users.first() || message.author
+        var valeurr = Math.floor(Math.random() * (Math.ceil(100) - Math.floor(0))) + 0
+        var poursang = (`Bravo mon brave, tu a ${valeurr}% de gigachaditude a cette instant !`)
+        message.channel.send(`${autor}, ${poursang}`)
+    },
+
+    forssagesdwCommande:
+
+    function forssagesdw(message) {
+        message.reply(`\nUne très bonne histoire que je peux te conseiller, c'est bien sur Seven Destiny World's. \nGrace a mon avis de la haute société je peux te confirmer que cette histoire est un chef d'oeuvre de l'humanité, c'est même une evidence ! \nMais toi petite personne de la plèbe tu ne pourrai comprendre le génie qui a écrit ces lignes.
+        \nTient le lien vers ce magnifique chef d'oeuvre:\nhttps://www.wattpad.com/1099549860-the-seven-destiny-world%27s`)
+    },
+
+    feurCommande:
+
+    function feur(message) {
+        /**randomfeurlist = [
+            "-mtageul"
+        ]
+        const randomfeur = randomfeurlist[Math.floor(Math.random() * randomfeurlist.length)]
+        */
+        message.reply("-mtageul")
     
+    },
+
+    MechanstégratuiteCommande:
+
+    function Mechanstégratuite(message) {
+        const useseur = message.mentions.users.first() || message.author
+        message.delete()
+        message.channel.send(`${useseur} la plèbe n'a pas le droit a la parole.`)    
+    },
+
+    GeorgeMaidCommande:
+
+    function gmaid(message, Discord) {
+        if (message.guild.id == "1014888100687786084") {
+            const embed = new Discord.MessageEmbed()
+            .setTitle("George en Maid !")
+            .setImage(`https://cdn.discordapp.com/attachments/1014888101304352790/1015275693824802866/IMG20220902165947.jpg`, ({ dynamic: true, size: 1024 }))
+            message.channel.send(embed)
+        }
+        else {
+            message.channel.send("Ce n'est pas le bon serveur pour executer cette commande !")
+        }
+    },
+
+    PileOuFaceCommande:
+
+    function pof(message) {
+        const userparis = message.toString().slice(5);
+        pileouface = [
+            "Pile",
+            "Face",
+        ]
+        const randomPileOuFace = pileouface[Math.floor(Math.random() * pileouface.length)]
+        console.log(userparis, randomPileOuFace)
+        if (randomPileOuFace == userparis) {
+            message.channel.send("Et c'est gagner, tu a vaincu l'énemie petite personne de la plèbe !")
+        } 
+        else {
+            message.channel.send("Et c'est perdu, tu restera dans la plèbe a tout jamais déchet.")
+        }
+    },
+
+    sympaballcommande:
+
+    function sympaball(message) {
+        const possiblereponse = [
+            "Oui", 
+            "Je confirme",
+            "Avec plaisir !",
+            "Je sais je sais",
+            "Tu n'a pas tord",
+            "En vrai...",
+            "Oui, why not",
+            "Hmmm.. a vrai dire je suis d'accord"
+        ]
+        const randompossibleréponse = possiblereponse[Math.floor(Math.random() * possiblereponse.length)]
+        message.reply(randompossibleréponse)
+    },
+
     ballcommande:
 
     function hachiball(message) {
@@ -137,9 +219,4 @@ module.exports = {
         .setImage(grReponse)
         message.channel.send(embed) // Le bot fait un petit embed pour ne pas montrer le lien du gif de la base de donner
     }
-
 }
-
-
-
-
