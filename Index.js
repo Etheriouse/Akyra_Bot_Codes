@@ -89,7 +89,7 @@ client.on("message", async message => {
         Fun.forssagesdwCommande(message)
     }
     if (message.content.startsWith(`${prefix}Eq`)) {
-        message.reply("Pas encore fait donc attend que sa soit fait") 
+        message.reply("Pas encore fait donc attend que sa soit fait")
         return
         /*message.channel.send("Donnez valeur de a:")
         if (message.content.startsWith("a:")) {
@@ -111,19 +111,19 @@ client.on("message", async message => {
                             }
                             else {
                                 message.reply("Donnez une valeur de c convenable")
-                            }   
+                            }
                         }
                     }
                     else {
                         message.reply("Donnez une valeur de b convenable")
                     }
-                } 
+                }
             }
             else {
             message.reply("Donnez une valeur de a convenable")
-            } 
+            }
         }
-        */     
+        */
     }
 
     // Commande divertissante //
@@ -173,10 +173,10 @@ client.on("message", async message => {
                 /**
                 console.log('Ya pas de role muted')
                 message.guild.createRole()
-                  
+
                 console.log("le role muted a été crée")
                 return
-            
+
             A faire pour plus tard car la j'ai la groooooosssse flemme */
             }
             const usermuted = message.mentions.users.first();
